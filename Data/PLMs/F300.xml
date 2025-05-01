@@ -1,0 +1,35 @@
+<PLMInfo>
+  <Name>Custom Gate system: Switch PLM</Name>
+  <Properties>
+    <Property> 
+      <Name>Gate is in same room as switch</Name> 
+      <Description>if set, the switch will assume there's a gate following the switch in the PLM list</Description>
+      <Mask>0x1000</Mask>
+    </Property>
+    <Property> 
+      <Name>Switch displays message box</Name> 
+      <Description>if set, the switch will display the message box chosen in the ASM file</Description>
+      <Mask>0x2000</Mask>
+    </Property>
+    <Property> 
+      <Name>Switch affects total gate count</Name> 
+      <Description>if set, the switch will decrement the total amount of gates in the hack, otherwise, it just opens it's corresponding gate</Description>
+      <Mask>0x4000</Mask>
+    </Property>
+    <Property>
+      <Name>type of switch</Name>
+      <Mask>0x0300</Mask>
+      <NameValues>
+          <NameValue Value="0" Name="blue switch"/>
+          <NameValue Value="1" Name="red switch"/>
+          <NameValue Value="2" Name="green switch"/>
+          <NameValue Value="3" Name="yellow switch"/>
+      </NameValues>
+    </Property>
+    <Property>
+      <Name>Door ID</Name>
+      <Description>Door ID the switch will set as opened</Description>
+      <Mask>0x00FF</Mask>
+    </Property>    
+  </Properties>
+</PLMInfo>

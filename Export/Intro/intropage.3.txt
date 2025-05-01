@@ -1,0 +1,6 @@
+[Run B074]
+[Wait 0001]
+[Speed 0005]
+[Goto 01,04]
+NOTHING
+[Run B08C]

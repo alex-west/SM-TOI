@@ -1,0 +1,11 @@
+<PLMInfo>
+  <Name>Tide Trigger PLM</Name>
+  <Offset X="0" Y="0"/>
+  <Properties>
+  <Property>
+      <Name>Target Y</Name>
+      <Description>New Position for the Tide</Description>
+      <Mask>0xFFFF</Mask>
+    </Property>    
+  </Properties> 
+</PLMInfo>

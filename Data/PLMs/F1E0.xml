@@ -1,0 +1,11 @@
+<PLMInfo>
+  <Name>Custom Gate system: Gate PLM</Name>
+  <Offset X="0" Y="0"/>
+  <Properties>
+  <Property>
+      <Name>Door ID</Name>
+      <Description>Door ID the gate will check</Description>
+      <Mask>0x00FF</Mask>
+    </Property>    
+  </Properties> 
+</PLMInfo>
