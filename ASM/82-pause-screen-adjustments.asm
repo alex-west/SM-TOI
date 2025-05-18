@@ -30,9 +30,9 @@ org $82BF06 ; Equipment screen tilemaps
 
 ; oMORPHING BALL - Meatball
     dw $08FF, $08F2, $08F3, $08F4, $08F5, $08FD, $08D4, $08D4, $08D4
-; oBOMBS - x
-    dw $08FF, $08D5, $08D4, $08D4, $08D4, $08D4, $08D4, $08D4, $08D4
-; oSPRING BALL - Espresso Ball
+; oSPRING BALL - Spicy Meatball
+    dw $08FF, $094A, $094B, $094D, $08F2, $08F3, $08F4, $08F5, $08FD
+; oDASH BALL - Espresso Ball
     dw $08FF, $0900, $0901, $0902, $0903, $0904, $0905, $0906, $090B
 ; Unused
     dw $0000
@@ -52,14 +52,25 @@ org $82BF06 ; Equipment screen tilemaps
 ; Blank placeholder
     dw $0000, $0000, $0000, $0000, $0000, $0000, $0000, $0000, $0000
 
-
+;; Equipment bitmasks
 org $82C04C ; Change logical order on menu
     dw $1000 ; Weapons - charge
     dw $0004 ; Weapons - spazer
     dw $0002 ; Weapons - ice
     dw $0001 ; Weapons - wave
-    dw $0008  ; Weapons - plasma
-; My spring-with-morph patch modifies the table immediately following this
+    dw $0008 ; Weapons - plasma
+    
+    dw $0001 ; Suit/misc - varia suit
+    dw $0020 ; Suit/misc - gravity suit
+    
+    dw $0004 ; Suit/misc - morph ball (was $0006 in previous version (spring+morph))
+    dw $0002 ; Suit/misc - spring ball (was $1000 for bombs (which were unused))
+    dw $0800 ; Suit/misc - spring ball (changed from $0002) (now dash ball)
+    dw $0008 ; Suit/misc - screw attack
+
+;$82:C062             dw 0100, ; Boots - hi-jump boots
+;                        0200, ; Boots - space jump
+;                        2000  ; Boots - speed booster
 
 
 
