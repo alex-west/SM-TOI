@@ -51,7 +51,7 @@
       <tilex>1</tilex>
       <tiley>5</tiley>
       <screenx>00</screenx>
-      <screeny>01</screeny>
+      <screeny>02</screeny>
       <distance>8000</distance>
       <doorcode>0000</doorcode>
     </Door>
