@@ -219,10 +219,10 @@ org !MsgBocCodeFreespace
   ASL
   TAY
   LDA FirstDigitTable,y  
-  LDX #$0112 ;play around with this value to change where the first digit appears (make sure it's an even number)            
+  LDX #$0114 ;play around with this value to change where the first digit appears (make sure it's an even number)            
   STA $7E3200,x          
   LDA SecondDigitTable,y 
-  LDX #$0114 ;play around with this value to change where the second digit appears (make sure it's an even number)  
+  LDX #$0112 ;play around with this value to change where the second digit appears (make sure it's an even number)  
   STA $7E3200,x          
   LDA #$01A0
   STA $34
@@ -231,9 +231,11 @@ org !MsgBocCodeFreespace
   RTS
 
 FirstDigitTable:
-DW #$2809,#$2800,#$2801,#$2802,#$2803,#$2804,#$2805,#$2806,#$2807,#$2808,#$2800,#$2800,#$2800,#$2800,#$2800,#$2800,#$2800,#$2800,#$2800,#$2800,#$2801
+dw $3445, $343C, $343D, $343E, $343F, $3440, $3441, $3442, $3443, $3444, $3445, $343C, $343D, $343E, $343F, $3440, $3441, $3442, $3443, $3444 
+;DW #$2809,#$2800,#$2801,#$2802,#$2803,#$2804,#$2805,#$2806,#$2807,#$2808,#$2800,#$2800,#$2800,#$2800,#$2800,#$2800,#$2800,#$2800,#$2800,#$2800,#$2801
 SecondDigitTable:
-DW #$280F,#$280F,#$280F,#$280F,#$280F,#$280F,#$280F,#$280F,#$280F,#$280F,#$2809,#$2800,#$2801,#$2802,#$2803,#$2804,#$2805,#$2806,#$2807,#$2808,#$2809
+dw $340F, $340F, $340F, $340F, $340F, $340F, $340F, $340F, $340F, $343C, $343C, $343C, $343C, $343C, $343C, $343C, $343C, $343C, $343C, $343D
+;DW #$280F,#$280F,#$280F,#$280F,#$280F,#$280F,#$280F,#$280F,#$280F,#$280F,#$2809,#$2800,#$2801,#$2802,#$2803,#$2804,#$2805,#$2806,#$2807,#$2808,#$2809
 
 
 ;----------main game hijack for init RAM---------
