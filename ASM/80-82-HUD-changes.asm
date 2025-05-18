@@ -139,7 +139,14 @@ HUD_write2x2:
 
 
 ; HUD Init Hijack - Skip initial drawing of numbers (should be unnoticeable with the fade-in (?))
-org $809AF7
+org $809AE4
+    lda #$FFFF
+    sta energyPrev
+    sta missilesPrev
+    sta superPrev
+    sta powerPrev
+    stz $0A0E ; Previous HUD item
+
     bra HUD_initHijack
 
 org $809B2B
