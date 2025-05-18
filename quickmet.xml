@@ -7,10 +7,10 @@
   <MaxSuperMissiles>5</MaxSuperMissiles>
   <PowerBombs>5</PowerBombs>
   <MaxPowerBombs>5</MaxPowerBombs>
-  <ReserveEnergy>0</ReserveEnergy>
-  <MaxReserveEneregy>0</MaxReserveEneregy>
-  <CollectedItems>2B0F</CollectedItems>
-  <EquippedItems>0006</EquippedItems>
+  <ReserveEnergy>100</ReserveEnergy>
+  <MaxReserveEneregy>100</MaxReserveEneregy>
+  <CollectedItems>EB0F</CollectedItems>
+  <EquippedItems>C006</EquippedItems>
   <CollectedBeams>100F</CollectedBeams>
   <EquippedBeams>1000</EquippedBeams>
   <AreaMap0>00</AreaMap0>
