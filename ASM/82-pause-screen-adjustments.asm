@@ -1,6 +1,99 @@
 ; Pause Screen adjustments
 lorom
 
+;;; $B150: Equipment screen - main - boots ;;;
+org $82B150 ; Fix the Spazer-Plasma glitch
+    PHP
+    REP #$30
+    JSR $B568  ;[$82:B568]  ; Button response ; Moving this up fixes the Spazer/Plasma glitch (thx PJ)
+    JSR $B160  ;[$82:B160]  ; Move response
+    LDA #$0012             ;\
+    STA $18    ;[$7E:0018]  ;} $18 = 12h (boots tilemap size in bytes)
+    ;JSR $B568  ;[$82:B568]  ; Button response <- this being here is bad, apparently
+    PLP
+    RTS
+
+; Spazer-plasma check
+; -- Make the Linguini beam and other beams mutually exclusive
+;0001: Wave
+;0010:
+;0100:
+;1000:
+;        2: Ice
+;        4: Spazer
+;        8: Plasma
+
+org $82B073
+    BIT.w #%00000111
+    BNE branch_toggledPVC
+    ; BIT #$0004 ; Check if P V or C was toggled
+
+org $82B087 
+    BIT.w #%00000111 
+    ; BIT #$0004
+
+org $82B08C
+    JMP beamUnequipHijack
+
+branch_toggledPVC:
+    LDA $24 ; Prev beams
+    ; Funny bitwise math (to check if something got turned on)
+    EOR #$FFFF
+    AND $09A6
+    BIT.w #%00000111
+    BEQ exitPVCfunction
+    LDA $09A6
+    BRA unequipPlasma
+    
+org $82B0A8
+    unequipPlasma:
+
+org $82B0C0
+    exitPVCfunction:
+
+org $82F723
+beamUnequipHijack:
+    AND #%1111111111111000 ; Unequip PVC beams
+    STA $09A6
+
+    ; Cleanup graphics for Spazer beam
+    ; Load dest arg
+    LDA $C072 ; Load destination in VRAM for Spazer
+    STA $00   ; Store arg in temp
+    ; Load palette arg
+    LDA #$0C00
+    STA $12
+    ; Load length arg
+    LDA #$000A
+    STA $16
+    ; Set tile palettes
+    JSR $A29D
+
+    ; And some other beam
+    LDA $C070
+    STA $00
+    ; Load palette arg
+    LDA #$0C00
+    STA $12
+    ; Load length arg
+    LDA #$000A
+    STA $16
+    JSR $A29D
+    
+    ; And another beam
+    LDA $C06E
+    STA $00
+    ; Load palette arg
+    LDA #$0C00
+    STA $12
+    ; Load length arg
+    LDA #$000A
+    STA $16
+    JSR $A29D
+    
+    PLP
+    RTS
+
 org $82BF06 ; Equipment screen tilemaps
 
 ; MODE[MANUAL]
