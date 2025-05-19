@@ -5,11 +5,11 @@ lorom
 org $82B150 ; Fix the Spazer-Plasma glitch
     PHP
     REP #$30
-    JSR $B568  ;[$82:B568]  ; Button response ; Moving this up fixes the Spazer/Plasma glitch (thx PJ)
-    JSR $B160  ;[$82:B160]  ; Move response
-    LDA #$0012             ;\
+    ;JSR $B160  ;[$82:B160]  ; Move response
+    LDA #$0012             ;
     STA $18    ;[$7E:0018]  ;} $18 = 12h (boots tilemap size in bytes)
-    ;JSR $B568  ;[$82:B568]  ; Button response <- this being here is bad, apparently
+    JSR $B568  ;[$82:B568]  ; Button response <- this being here is bad, apparently
+    JSR $B160  ;[$82:B160]  ; Move response
     PLP
     RTS
 
