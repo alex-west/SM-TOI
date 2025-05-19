@@ -52,6 +52,17 @@
       <distance>8000</distance>
       <doorcode>0000</doorcode>
     </Door>
+    <Door>
+      <toroom area="01" index="4A" />
+      <bitflag>40</bitflag>
+      <direction>05</direction>
+      <tilex>E</tilex>
+      <tiley>6</tiley>
+      <screenx>01</screenx>
+      <screeny>00</screeny>
+      <distance>8000</distance>
+      <doorcode>0000</doorcode>
+    </Door>
   </Doors>
   <States>
     <State condition="default">
@@ -224,14 +235,14 @@
         814E 850E 00FF 00FF 00FF 00FF 037E 00FF 00FF 00FF 00FF 00FF 00FF 00FF 810E 854E
         814E 850E 00FF 00FF 00FF 00FF 037E 00FF 00FF 00FF 00FF 00FF 00FF 00FF 810E 854E
         816E 850E 00FF 00FF 00FF 00FF 037E 00FF 00FF 00FF 00FF 00FF 00FF 00FF 810E 856E
-        81C2 852D 8108 8108 8108 8108 8108 8108 850D 039E 039E 039E 039E 039E 810E 8184
-        81E2 8D2D 8908 8908 8908 8908 8908 8908 8D0D 00FF 00FF 00FF 00FF 00FF 890D 8908
-        81A4 850E 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF C00C 9040
-        8185 850E 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF D02C 9060
-        81A4 850E 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF D82C 9860
-        8184 850E 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF D80C 9840
-        896E 850E 1571 1571 1570 04FF 04FF 00FF 00FF 00FF 00FF 1170 1171 1171 810D 8108
-        814E 850E 8550 1531 1590 1570 04FF 00FF 00FF 00FF 1170 1190 1131 8150 810E 8184
+        8184 852D 8108 8108 8108 8108 8108 8108 850D 039E 039E 039E 039E 039E 810E 8184
+        8908 8908 8908 8908 8908 8908 8908 8908 8D0D 00FF 00FF 00FF 00FF 00FF 890D 8908
+        9440 C40C 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF C00C 9040
+        9460 D42C 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF D02C 9060
+        9C60 DC2C 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF D82C 9860
+        9C40 DC0C 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF D80C 9840
+        8108 850D 1571 1571 1570 04FF 04FF 00FF 00FF 00FF 00FF 1170 1171 1171 810D 8108
+        896E 850E 8550 1531 1590 1570 04FF 00FF 00FF 00FF 1170 1190 1131 8150 810E 8184
         814E 852D 8108 8108 8108 8108 8108 8108 8108 8108 8108 8108 8108 8108 812D 8D6E
         896C 896D 896D 896D 896D 896D 896E 81C3 81C4 8D6E 896D 896D 896D 896D 896D 8D6C
         8191 8191 8191 8191 8191 8191 896C 896D 896D 8D6C 8191 8191 8191 8191 8191 8191
@@ -408,10 +419,10 @@
         00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
         00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
         00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-        00 00 00 00 00 00 00 00 00 00 00 00 00 00 40 00
-        00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00
-        00 00 00 00 00 00 00 00 00 00 00 00 00 00 FE 00
-        00 00 00 00 00 00 00 00 00 00 00 00 00 00 FD 00
+        03 41 00 00 00 00 00 00 00 00 00 00 00 00 40 00
+        03 FF 00 00 00 00 00 00 00 00 00 00 00 00 FF 00
+        03 FE 00 00 00 00 00 00 00 00 00 00 00 00 FE 00
+        03 FD 00 00 00 00 00 00 00 00 00 00 00 00 FD 00
         00 00 53 53 52 00 00 00 00 00 00 12 13 13 00 00
         00 00 00 53 53 52 00 00 00 00 12 13 13 00 00 00
         00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
@@ -425,6 +436,19 @@
       <music>050F</music>
       <FX1s>
         <FX1 roomarea="00" roomindex="34" fromdoor="01">
+          <surfacestart>09A8</surfacestart>
+          <surfacenew>0128</surfacenew>
+          <surfacespeed>FEB0</surfacespeed>
+          <surfacedelay>1E</surfacedelay>
+          <type>06</type>
+          <transparency1_A>02</transparency1_A>
+          <transparency2_B>2E</transparency2_B>
+          <liquidflags_C>00</liquidflags_C>
+          <paletteflags>00</paletteflags>
+          <animationflags>03</animationflags>
+          <paletteblend>82</paletteblend>
+        </FX1>
+        <FX1 roomarea="01" roomindex="4A" fromdoor="00">
           <surfacestart>09A8</surfacestart>
           <surfacenew>0128</surfacenew>
           <surfacespeed>FEB0</surfacespeed>
@@ -559,6 +583,12 @@
           <x>0E</x>
           <y>16</y>
           <arg>0008</arg>
+        </PLM>
+        <PLM>
+          <type>C890</type>
+          <x>01</x>
+          <y>96</y>
+          <arg>000B</arg>
         </PLM>
       </PLMs>
       <BGData>
