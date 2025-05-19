@@ -93,7 +93,7 @@
         </Layer2>
       </LevelData>
       <GFXset>1E</GFXset>
-      <music>0606</music>
+      <music>0506</music>
       <FX1s>
         <FX1 default="true">
           <surfacestart>FFFF</surfacestart>
