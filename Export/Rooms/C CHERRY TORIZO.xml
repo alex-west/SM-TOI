@@ -275,7 +275,7 @@
           <type>BAF4</type>
           <x>01</x>
           <y>06</y>
-          <arg>081B</arg>
+          <arg>080C</arg>
         </PLM>
         <PLM>
           <type>EF3B</type>
@@ -388,7 +388,7 @@
           <type>BAF4</type>
           <x>01</x>
           <y>06</y>
-          <arg>081B</arg>
+          <arg>080C</arg>
         </PLM>
         <PLM>
           <type>EF3B</type>

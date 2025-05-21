@@ -86,7 +86,7 @@
     <Door>
       <toroom area="00" index="15" />
       <bitflag>00</bitflag>
-      <direction>00</direction>
+      <direction>04</direction>
       <tilex>1</tilex>
       <tiley>6</tiley>
       <screenx>00</screenx>
@@ -1585,6 +1585,30 @@
             <Change screen="07" scroll="00" />
             <Change screen="0B" scroll="02" />
           </ScrollData>
+        </PLM>
+        <PLM>
+          <type>C848</type>
+          <x>31</x>
+          <y>36</y>
+          <arg>080D</arg>
+        </PLM>
+        <PLM>
+          <type>DB5A</type>
+          <x>3E</x>
+          <y>36</y>
+          <arg>000E</arg>
+        </PLM>
+        <PLM>
+          <type>DB60</type>
+          <x>3E</x>
+          <y>39</y>
+          <arg>000E</arg>
+        </PLM>
+        <PLM>
+          <type>DB56</type>
+          <x>3E</x>
+          <y>37</y>
+          <arg>000E</arg>
         </PLM>
       </PLMs>
       <BGData />
