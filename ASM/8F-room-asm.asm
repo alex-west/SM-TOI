@@ -88,16 +88,6 @@ print pc, " - Pistachio Flooded Tower Init ASM"
     .exit: 
 rts
 
-;Pistachio_FloodedTower_Main:
-;print pc, " - Pistachio Flooded Tower Main ASM"
-;    jsl HandleEarthquakeSound_stub
-;rts
-
-;org $88EE32
-;HandleEarthquakeSound_stub:
-;    jsr $B21D
-;rtl
-
 
 ;---------------------Event Trigger Alarm Zebes Timer----------------------------------------
 ;Code by FullOfFail, Scyzer, JAM, Smiley, Jathys, Mon732, and PJBoy.
@@ -156,6 +146,25 @@ EventTrigger:
 	JSR !RoomShakeExplosion 				
 	
 .End RTS
+
+; Pistachio-Cherry Bridge Main ASM
+warn pc, " - Pistachio-Cherry Bridge Main ASM"
+bridgeMapX_A = $0001
+bridgeMapX_B = $0032
+bridgeThreshold = $0200
+
+PistachioCherry_Bridge_Main:
+    lda $0AF6
+    cmp #bridgeThreshold
+    bmi .cherry
+        lda #bridgeMapX_A
+        sta $07A1 ; Room X on map
+        rts
+    .cherry:
+        lda #bridgeMapX_B
+        sta $07A1
+        rts
+
 
 ;----------------------------Timer Lengths---------------------------------------------------
 
