@@ -122,16 +122,28 @@ HUD_addPowerIcon:
 
 org $809A2E
 HUD_addGrapple:
+;    php
+    phb
+        phk
+        plb
     rep #$30
     lda.w HUD_grapple
     sta.l HUD_ramTilemap+HUDoffset_grappleIcon
+    plb
+;    plp
 rtl
 
 org $809A3E
 HUD_addXRay:
+;    php
+    phb
+        phk
+        plb
     rep #$30
     lda.w HUD_xRay
     sta.l HUD_ramTilemap+HUDoffset_xRayIcon
+    plb
+;    plp
 rtl
 
 org $809A4C
