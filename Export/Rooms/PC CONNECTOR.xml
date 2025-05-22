@@ -186,7 +186,7 @@
         </BTS>
       </LevelData>
       <GFXset>01</GFXset>
-      <music>0000</music>
+      <music>0300</music>
       <FX1s>
         <FX1 default="true">
           <surfacestart>FFFF</surfacestart>

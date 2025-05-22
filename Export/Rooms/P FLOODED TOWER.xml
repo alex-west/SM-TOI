@@ -55,10 +55,10 @@
     <Door>
       <toroom area="00" index="4C" />
       <bitflag>00</bitflag>
-      <direction>00</direction>
-      <tilex>0</tilex>
-      <tiley>0</tiley>
-      <screenx>00</screenx>
+      <direction>05</direction>
+      <tilex>E</tilex>
+      <tiley>6</tiley>
+      <screenx>01</screenx>
       <screeny>00</screeny>
       <distance>8000</distance>
       <doorcode>0000</doorcode>
@@ -459,7 +459,7 @@
           <animationflags>03</animationflags>
           <paletteblend>82</paletteblend>
         </FX1>
-        <FX1 roomarea="01" roomindex="4A" fromdoor="00">
+        <FX1 roomarea="00" roomindex="4C" fromdoor="00">
           <surfacestart>09A8</surfacestart>
           <surfacenew>0128</surfacenew>
           <surfacespeed>FEB0</surfacespeed>
