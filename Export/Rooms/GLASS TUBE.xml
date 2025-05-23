@@ -11,17 +11,6 @@
   <specialGFX>00</specialGFX>
   <Doors>
     <Door>
-      <toroom area="04" index="04" />
-      <bitflag>00</bitflag>
-      <direction>07</direction>
-      <tilex>6</tilex>
-      <tiley>D</tiley>
-      <screenx>01</screenx>
-      <screeny>07</screeny>
-      <distance>0200</distance>
-      <doorcode>0000</doorcode>
-    </Door>
-    <Door>
       <toroom area="04" index="02" />
       <bitflag>00</bitflag>
       <direction>05</direction>

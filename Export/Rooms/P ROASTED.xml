@@ -17,7 +17,7 @@
       <tilex>E</tilex>
       <tiley>6</tiley>
       <screenx>00</screenx>
-      <screeny>00</screeny>
+      <screeny>01</screeny>
       <distance>8000</distance>
       <doorcode>0000</doorcode>
     </Door>
@@ -141,7 +141,7 @@
         </Layer2>
       </LevelData>
       <GFXset>18</GFXset>
-      <music>0000</music>
+      <music>0300</music>
       <FX1s>
         <FX1 default="true">
           <surfacestart>00B0</surfacestart>

@@ -21,21 +21,6 @@
       <distance>8000</distance>
       <doorcode>0000</doorcode>
     </Door>
-    <Door>
-      <toroom area="04" index="24" />
-      <bitflag>00</bitflag>
-      <direction>04</direction>
-      <tilex>1</tilex>
-      <tiley>6</tiley>
-      <screenx>00</screenx>
-      <screeny>03</screeny>
-      <distance>8000</distance>
-      <doorcode>
-        <ScrollData>
-          <Change screen="04" scroll="00" />
-        </ScrollData>
-      </doorcode>
-    </Door>
   </Doors>
   <States>
     <State condition="default">
