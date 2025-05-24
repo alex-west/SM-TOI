@@ -596,7 +596,7 @@
       <GFXset>0C</GFXset>
       <music>0000</music>
       <FX1s>
-        <FX1 roomarea="04" roomindex="14" fromdoor="01">
+        <FX1 roomarea="04" roomindex="14" fromdoor="00">
           <surfacestart>0080</surfacestart>
           <surfacenew>FFFF</surfacenew>
           <surfacespeed>0000</surfacespeed>
@@ -609,7 +609,7 @@
           <animationflags>00</animationflags>
           <paletteblend>E8</paletteblend>
         </FX1>
-        <FX1 roomarea="04" roomindex="1B" fromdoor="02">
+        <FX1 roomarea="04" roomindex="1B" fromdoor="01">
           <surfacestart>0080</surfacestart>
           <surfacenew>FFFF</surfacenew>
           <surfacespeed>0000</surfacespeed>

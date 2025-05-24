@@ -28,12 +28,12 @@
       <direction>02</direction>
       <tilex>0</tilex>
       <tiley>0</tiley>
-      <screenx>02</screenx>
+      <screenx>04</screenx>
       <screeny>00</screeny>
       <distance>8000</distance>
       <doorcode>
         <ScrollData>
-          <Change screen="02" scroll="02" />
+          <Change screen="04" scroll="02" />
         </ScrollData>
       </doorcode>
     </Door>

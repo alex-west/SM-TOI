@@ -99,7 +99,7 @@
       <direction>03</direction>
       <tilex>5</tilex>
       <tiley>E</tiley>
-      <screenx>00</screenx>
+      <screenx>02</screenx>
       <screeny>03</screeny>
       <distance>01D0</distance>
       <doorcode>0000</doorcode>
