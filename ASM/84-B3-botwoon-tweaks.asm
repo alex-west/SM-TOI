@@ -62,6 +62,13 @@ org $B39AE1 ; Spawn PLM to crumble Botwoon's wall
     db $07,$0E
     dw $B79B
     
+;;; $9A5E: Botwoon function - death sequence - falling to ground ;;;
+org $B39A86 ; Comparison threshold
+    CMP #$00D8 ; #$00C8 
+org $B39A8B ; Clamping position
+    LDA #$00D8 ; #$00C8
+
+
 ;;; $9AF9: Botwoon function - death sequence - crumbling wall ;;;
 
 org $B39AFD
@@ -97,6 +104,13 @@ org $B39B99
 
 ; == BOTWOON PROJECTILE EDITS ==
 
+;;; $EB1F: Botwoon's body function - dying - falling ;;;
+org $86EB4C ; Comparison threshold
+    CMP #$00D8 ; #$00C8
+
+org $86EB51 ; Clamping threshold
+    LDA #$00D8 ; #$00C8
+
 ; Botwoon's body
 org $86EBA0
     dw $EA31,$EA80,$E8F3
@@ -107,6 +121,6 @@ org $86EBA0
 ; Botwoon's spit
 org $86EC48
     dw $EBC6,$EC05,$EBAE
-    dw $02,$02
+    db $02,$02
     dw $1014 ; Damage
     dw $0000,$84FC
