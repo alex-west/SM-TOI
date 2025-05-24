@@ -1,9 +1,9 @@
 <Room>
   <Saves />
   <index>50</index>
-  <area>00</area>
-  <x>00</x>
-  <y>00</y>
+  <area>02</area>
+  <x>3B</x>
+  <y>03</y>
   <width>01</width>
   <height>01</height>
   <upscroll>70</upscroll>
@@ -12,7 +12,7 @@
   <Doors>
     <Door>
       <toroom area="00" index="4F" />
-      <bitflag>00</bitflag>
+      <bitflag>40</bitflag>
       <direction>04</direction>
       <tilex>1</tilex>
       <tiley>8</tiley>

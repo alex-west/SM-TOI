@@ -22,8 +22,8 @@
       <doorcode>0000</doorcode>
     </Door>
     <Door>
-      <toroom area="00" index="50" />
-      <bitflag>00</bitflag>
+      <toroom area="02" index="50" />
+      <bitflag>40</bitflag>
       <direction>05</direction>
       <tilex>E</tilex>
       <tiley>8</tiley>
