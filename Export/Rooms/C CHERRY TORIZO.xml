@@ -115,36 +115,6 @@
           <speed>0000</speed>
           <speed2>0000</speed2>
         </Enemy>
-        <Enemy>
-          <ID>F2D3</ID>
-          <X>00E0</X>
-          <Y>00B8</Y>
-          <tilemap>0000</tilemap>
-          <special>2000</special>
-          <gfx>0000</gfx>
-          <speed>0000</speed>
-          <speed2>0000</speed2>
-        </Enemy>
-        <Enemy>
-          <ID>F2D3</ID>
-          <X>00E0</X>
-          <Y>00B8</Y>
-          <tilemap>0000</tilemap>
-          <special>2000</special>
-          <gfx>0000</gfx>
-          <speed>0002</speed>
-          <speed2>0000</speed2>
-        </Enemy>
-        <Enemy>
-          <ID>F2D3</ID>
-          <X>00E0</X>
-          <Y>00B8</Y>
-          <tilemap>0000</tilemap>
-          <special>2000</special>
-          <gfx>0000</gfx>
-          <speed>0004</speed>
-          <speed2>0000</speed2>
-        </Enemy>
       </Enemies>
       <EnemyTypes>
         <Enemy>
@@ -167,7 +137,7 @@
           <type>DB44</type>
           <x>08</x>
           <y>08</y>
-          <arg>000E</arg>
+          <arg>000F</arg>
         </PLM>
         <PLM>
           <type>C848</type>
