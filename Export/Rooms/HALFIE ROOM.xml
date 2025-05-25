@@ -43,17 +43,6 @@
       <distance>8000</distance>
       <doorcode>0000</doorcode>
     </Door>
-    <Door>
-      <toroom area="04" index="36" />
-      <bitflag>00</bitflag>
-      <direction>05</direction>
-      <tilex>E</tilex>
-      <tiley>6</tiley>
-      <screenx>04</screenx>
-      <screeny>01</screeny>
-      <distance>8000</distance>
-      <doorcode>0000</doorcode>
-    </Door>
   </Doors>
   <States>
     <State condition="default">
