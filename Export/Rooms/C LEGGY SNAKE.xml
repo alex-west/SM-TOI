@@ -95,8 +95,8 @@
       <doorcode>0000</doorcode>
     </Door>
     <Door>
-      <toroom area="00" index="4A" />
-      <bitflag>00</bitflag>
+      <toroom area="04" index="4A" />
+      <bitflag>40</bitflag>
       <direction>05</direction>
       <tilex>E</tilex>
       <tiley>6</tiley>
