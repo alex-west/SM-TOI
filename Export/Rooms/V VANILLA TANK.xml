@@ -653,7 +653,7 @@
         </BTS>
       </LevelData>
       <GFXset>03</GFXset>
-      <music>051B</music>
+      <music>0000</music>
       <FX1s>
         <FX1 default="true">
           <surfacestart>0388</surfacestart>
