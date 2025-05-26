@@ -178,8 +178,8 @@
         </PLM>
         <PLM>
           <type>F42A</type>
-          <x>01</x>
-          <y>04</y>
+          <x>00</x>
+          <y>00</y>
           <arg>0020</arg>
         </PLM>
       </PLMs>
