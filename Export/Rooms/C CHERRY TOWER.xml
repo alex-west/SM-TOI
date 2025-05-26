@@ -850,7 +850,7 @@
       <layer2_yscroll>00</layer2_yscroll>
       <ScrollData>00 02 02 02 02 02 02 02 02 02 01 </ScrollData>
       <roomvar>0000</roomvar>
-      <FX2>0000</FX2>
+      <FX2>C124</FX2>
       <PLMs>
         <PLM>
           <type>EEDB</type>
@@ -868,7 +868,7 @@
         </PLM>
       </PLMs>
       <BGData />
-      <layer1_2>91D3</layer1_2>
+      <layer1_2>C91F</layer1_2>
     </State>
     <State condition="default">
       <LevelData Width="1" Height="B">

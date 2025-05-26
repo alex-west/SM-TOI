@@ -1761,7 +1761,7 @@
       <layer2_yscroll>00</layer2_yscroll>
       <ScrollData>00 00 01 02 01 00 00 00 02 00 00 00 02 01 00 00 00 02 00 00 02 00 02 00 00 01 01 01 00 00 </ScrollData>
       <roomvar>0000</roomvar>
-      <FX2>0000</FX2>
+      <FX2>C124</FX2>
       <PLMs>
         <PLM>
           <type>F3E9</type>
@@ -1821,7 +1821,7 @@
         </PLM>
       </PLMs>
       <BGData />
-      <layer1_2>91D3</layer1_2>
+      <layer1_2>C91F</layer1_2>
     </State>
     <State condition="default">
       <LevelData Width="5" Height="6">

@@ -545,7 +545,7 @@
       <layer2_yscroll>C0</layer2_yscroll>
       <ScrollData>01 01 01 01 01 01 01 01 01 01 02 01 01 </ScrollData>
       <roomvar>0000</roomvar>
-      <FX2>0000</FX2>
+      <FX2>C124</FX2>
       <PLMs>
         <PLM>
           <type>C848</type>
@@ -690,7 +690,7 @@
           <Section>Tiles2</Section>
         </Data>
       </BGData>
-      <layer1_2>91D3</layer1_2>
+      <layer1_2>C91F</layer1_2>
     </State>
     <State condition="default">
       <LevelData Width="D" Height="1">
