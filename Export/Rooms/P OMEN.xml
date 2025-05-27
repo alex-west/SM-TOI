@@ -3,7 +3,7 @@
   <index>4C</index>
   <area>00</area>
   <x>05</x>
-  <y>0F</y>
+  <y>0E</y>
   <width>02</width>
   <height>01</height>
   <upscroll>70</upscroll>
@@ -17,7 +17,7 @@
       <tilex>1</tilex>
       <tiley>6</tiley>
       <screenx>00</screenx>
-      <screeny>09</screeny>
+      <screeny>08</screeny>
       <distance>8000</distance>
       <doorcode>0000</doorcode>
     </Door>
