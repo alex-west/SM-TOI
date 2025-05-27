@@ -2,6 +2,17 @@
 
 lorom
 
+; == Vanilla Room ASM Edits
+org $8f91b2
+;;; $91B2: Setup ASM: turn wall into shotblocks during escape ;;;
+Cherry_BTRoom_InitASM:
+    JSL.l $8483D7 ;SpawnHardCodedPlm
+    db $00,$0A : dw $B9ED
+    RTS
+
+
+; == My Room ASM
+
 ;!location  = $f000        ;place in 8f for the thing
 !scroll_RAM_start = $7ECD20 
 ;!xpos      = $0720        ;samus x position to check for

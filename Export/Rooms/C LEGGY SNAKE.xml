@@ -86,8 +86,8 @@
     <Door>
       <toroom area="00" index="15" />
       <bitflag>00</bitflag>
-      <direction>04</direction>
-      <tilex>1</tilex>
+      <direction>05</direction>
+      <tilex>E</tilex>
       <tiley>6</tiley>
       <screenx>00</screenx>
       <screeny>00</screeny>
@@ -97,8 +97,8 @@
     <Door>
       <toroom area="04" index="4A" />
       <bitflag>40</bitflag>
-      <direction>05</direction>
-      <tilex>E</tilex>
+      <direction>04</direction>
+      <tilex>1</tilex>
       <tiley>6</tiley>
       <screenx>00</screenx>
       <screeny>00</screeny>
@@ -393,10 +393,10 @@
         8191 8191 8191 8191 8191 8191 8191 8191 8191 8191 8191 8191 8191 8191 8191 8191
       </Screen>
           <Screen X="3" Y="3">
-        850E 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 810E 8D6E
-        850E 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 810E 854E
-        850E 0DA7 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 03BF 03BF 81AE 856E
-        852D 850D 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 03BF 03BF 81AE 8180
+        850E 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 03BF 03BF 81AE 8D6E
+        850E 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 03BF 03BF 81AE 854E
+        850E 0DA7 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 810E 856E
+        852D 850D 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 810E 8180
         81A4 85AE 03BF 03BF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 810E 81A0
         8908 8D0D 03BF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 890D 8908
         9440 C40C 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF C00C 9040
@@ -833,10 +833,10 @@
         00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
         00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
         00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-        06 41 00 00 00 00 00 00 00 00 00 00 00 00 40 05
-        06 FF 00 00 00 00 00 00 00 00 00 00 00 00 FF 05
-        06 FE 00 00 00 00 00 00 00 00 00 00 00 00 FE 05
-        06 FD 00 00 00 00 00 00 00 00 00 00 00 00 FD 05
+        05 41 00 00 00 00 00 00 00 00 00 00 00 00 40 06
+        05 FF 00 00 00 00 00 00 00 00 00 00 00 00 FF 06
+        05 FE 00 00 00 00 00 00 00 00 00 00 00 00 FE 06
+        05 FD 00 00 00 00 00 00 00 00 00 00 00 00 FD 06
         00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
         00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
         00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
@@ -1595,8 +1595,8 @@
           <arg>0010</arg>
         </PLM>
         <PLM>
-          <type>C848</type>
-          <x>31</x>
+          <type>C842</type>
+          <x>3E</x>
           <y>36</y>
           <arg>90FF</arg>
         </PLM>
@@ -1884,10 +1884,10 @@
         8191 8191 8191 8191 8191 8191 8191 8191 8191 8191 8191 8191 8191 8191 8191 8191
       </Screen>
           <Screen X="3" Y="3">
-        850E 01A7 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 810E 8D6E
-        850E 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 810E 854E
-        850E 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 810D 8141 850D 03BF 03BF 81AE 856E
-        852D 850D 00FF 00FF 00FF 00FF 00FF 00FF 00FF 890D 8908 8D0D 03BF 03BF 81AE 8180
+        850E 01A7 00FF 00FF 00FF 00FF 00FF 00FF 00FF 810D 8141 850D 03BF 03BF 81AE 8D6E
+        850E 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 890D 8908 8D0D 03BF 03BF 81AE 854E
+        850E 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 810E 856E
+        852D 850D 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 810E 8180
         81A4 85AE 03BF 03BF 810D 8140 850D 00FF 00FF 00FF 00FF 00FF 00FF 00FF 810E 81A0
         8908 8D0D 03BF 03BF 890D 8908 8D0D 00FF 00FF 00FF 00FF 00FF 00FF 00FF 890D 8908
         9440 C40C 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF 00FF C00C 9040
@@ -2324,10 +2324,10 @@
         00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
         00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
         00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-        06 41 00 00 00 00 00 00 00 00 00 00 00 00 40 05
-        06 FF 00 00 00 00 00 00 00 00 00 00 00 00 FF 05
-        06 FE 00 00 00 00 00 00 00 00 00 00 00 00 FE 05
-        06 FD 00 00 00 00 00 00 00 00 00 00 00 00 FD 05
+        05 41 00 00 00 00 00 00 00 00 00 00 00 00 40 06
+        05 FF 00 00 00 00 00 00 00 00 00 00 00 00 FF 06
+        05 FE 00 00 00 00 00 00 00 00 00 00 00 00 FE 06
+        05 FD 00 00 00 00 00 00 00 00 00 00 00 00 FD 06
         00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
         00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
         00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
@@ -3092,26 +3092,26 @@
           </ScrollData>
         </PLM>
         <PLM>
-          <type>C848</type>
-          <x>31</x>
+          <type>C842</type>
+          <x>3E</x>
           <y>36</y>
           <arg>080D</arg>
         </PLM>
         <PLM>
-          <type>DB5A</type>
-          <x>3E</x>
+          <type>DB4C</type>
+          <x>31</x>
           <y>36</y>
           <arg>000E</arg>
         </PLM>
         <PLM>
-          <type>DB60</type>
-          <x>3E</x>
+          <type>DB52</type>
+          <x>31</x>
           <y>39</y>
           <arg>000E</arg>
         </PLM>
         <PLM>
-          <type>DB56</type>
-          <x>3E</x>
+          <type>DB48</type>
+          <x>31</x>
           <y>37</y>
           <arg>000E</arg>
         </PLM>
