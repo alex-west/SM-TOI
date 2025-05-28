@@ -159,7 +159,7 @@ EventTrigger:
 .End RTS
 
 ; Pistachio-Cherry Bridge Main ASM
-warn pc, " - Pistachio-Cherry Bridge Main ASM"
+;warn pc, " - Pistachio-Cherry Bridge Main ASM"
 bridgeMapX_A = $0001
 bridgeMapX_B = $0032
 bridgeThreshold = $0200
