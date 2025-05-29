@@ -26,13 +26,12 @@ RTL
 
 endTilemapBaseAddr = $7E3000
 
-;endTilemapBaseAddr+($40*y)+(2*x)
-percent_HundredsTopAddr = endTilemapBaseAddr+(2*20)+($40*7)
-percent_HundredsBotAddr = endTilemapBaseAddr+(2*20)+($40*8)
-percent_TensTopAddr     = endTilemapBaseAddr+(2*21)+($40*7)
-percent_TensBotAddr     = endTilemapBaseAddr+(2*21)+($40*8)
-percent_OnesTopAddr     = endTilemapBaseAddr+(2*22)+($40*7)
-percent_OnesBotAddr     = endTilemapBaseAddr+(2*22)+($40*8)
+percent_HundredsOffset = (2*20)+($40*7)
+percent_TensOffset     = (2*21)+($40*7)
+percent_OnesOffset     = (2*22)+($40*7)
+
+datalogNumberOffset = (2*21)+($40*10)
+secretNumberOffset = (2*21)+($40*13)
 
 org $8BE627
 drawNumber_Percentage:
@@ -46,6 +45,11 @@ drawNumber_Percentage:
 	SEP #$20
 	STZ $12
 	LDA !CollectedItems				;Load number of collected items in the game
+
+    jsr countSecrets
+    sec
+    sbc $16
+    
 	STA $4202
 	LDA #$64					;Load #100 decimal
 	STA $4203
@@ -92,12 +96,9 @@ drawNumber_Percentage:
 HUNDREDTHS:
 	LDA $12						;Load hundredths value
 	BEQ TENTHS					;If 0, don't draw hundredths digit
-	ASL A : ASL A
-	TAY
-	LDA $E741,y
-	STA.l percent_HundredsTopAddr ;$7E339A
-	LDA $E743,y
-	STA.l percent_HundredsBotAddr ;$7E33DA
+    ldx #percent_HundredsOffset
+    jsr drawDigit
+
 TENTHS:
 	LDA $14						;Load tenths value
 	BNE DRAWTENTHS					;If more than 0, draw tenths digit
@@ -105,34 +106,13 @@ TENTHS:
 	BEQ ONETHS					;If hundredths is 0, don't draw tenths digit
 	LDA $14
 DRAWTENTHS:
-	ASL A : ASL A
-	TAY
-	LDA $E741,y
-	STA.l percent_TensTopAddr ;$7E339C
-	LDA $E743,y
-	STA.l percent_TensBotAddr ;$7E33DC
+    ldx #percent_TensOffset
+    jsr drawDigit
+
 ONETHS:
 	LDA $16						;load oneths value
-	ASL A : ASL A
-	TAY
-	LDA $E741,y
-	STA.l percent_OnesTopAddr ;$7E339E
-	LDA $E743,y
-	STA.l percent_OnesBotAddr ;$7E33DE
-;	LDA #$385A					;Load decimal point sign
-;	STA $7E33E0
-;	LDA $18						;load one/tenths value
-;	ASL A : ASL A
-;	TAY
-;	LDA $E741,y
-;	STA $7E33A2
-;	LDA $E743,y
-;	STA $7E33E2
-
-;	LDA #$386A					;draw percentage sign
-;	STA $7E33A4
-;	LDA #$387A
-;	STA $7E33E4
+    ldx #percent_OnesOffset
+    jsr drawDigit
     
 	PLY
 	PLX
@@ -140,9 +120,71 @@ ONETHS:
 	PLP
 	RTS
 
-warn pc, " $8BE741 percent function slack"
+
+mapStationArray = $7ED908
+
+drawNumber_Datalogs:
+    php
+    phb
+    phx
+    phy
+    phk : plb
+    stz $16 ; Arbitrary scratchpad value
+    
+    php
+    sep #$20
+    
+    lda mapStationArray+1
+    beq .noAddA
+        inc $16
+    .noAddA:
+    lda mapStationArray+2
+    beq .noAddB
+        inc $16
+    .noAddB:
+    lda mapStationArray+4
+    beq .noAddC
+        inc $16
+    .noAddC:
+    lda mapStationArray+5
+    beq .noAddD
+        inc $16
+    .noAddD:    
+    
+    plp
+    
+    lda $16
+;    lda #0000
+    ldx #datalogNumberOffset
+    jsr drawDigit
+    ply
+    plx
+    plb
+    plp
+rts
+
+drawNumber_Secrets:
+    php
+    phb
+    phx
+    phy
+    phk : plb
+    jsr countSecrets
+    lda $16
+    ;lda #0000
+    ldx #secretNumberOffset
+    jsr drawDigit
+    ply
+    plx
+    plb
+    plp
+rts
+
+
+;warn pc, " $8BE741 percent function slack"
 
 org $8BE741 ; Table for digit tilemaps
+    digitTilemaps:
 
 org $8BE780
 endingInstruction_moveResultsDown:
@@ -154,6 +196,43 @@ endingInstruction_moveResultsDown:
 org $8BF748
     dw $93D9,$93D9,seeYouNextMission_InstructionList ; See you next mission
     dw $93D9,$93D9,endingResults_InstructionList ; Item percentage
+
+
+org $8BF768 ; Freespace, I hope
+countSecrets:
+    stz $16 ; Arbitrary scratpad value
+    pha
+    php
+    sep #$20 ; 8-bit mode
+    lda.l $7ED870+4 ; Lucky me, all the secret item bits are in the same byte
+    bit #$04 ; Screw - ID 0x22
+    beq .noAddA
+        inc $16
+    .noAddA:
+    bit #$08 ; Speed - ID 0x23
+    beq .noAddB
+        inc $16
+    .noAddB:
+    bit #$10 ; Plasma - ID 0x24
+    beq .noAddC
+        inc $16
+    .noAddC:       
+    plp
+    pla
+rts
+
+; Args
+;  X - Tilemap offset
+;  A - Digit value
+drawDigit:
+    asl a
+    asl a
+    tay
+    lda digitTilemaps,y
+    sta.l endTilemapBaseAddr, x
+    lda digitTilemaps+2,y
+    sta.l endTilemapBaseAddr+$40, x
+rts
 
 ; Bank 8C Stuff
 
@@ -170,11 +249,11 @@ endingResults_InstructionList:
     dw $0020 : db   23,  7 : dw draw_PercentSign
     
     dw $0020 : db   8,  10 : dw draw_Datalogs
-    ;dw drawNumber_Datalogs
+    dw drawNumber_Datalogs
     dw $0020 : db  22,  10 : dw draw_DatalogTotal
     
     dw $0020 : db   8,  13 : dw draw_Secrets
-    ;dw drawNumber_Secrets
+    dw drawNumber_Secrets
     dw $0020 : db  22,  13 : dw draw_SecretsTotal
     
     dw $0080 : db $00, $00 : dw draw_Nothing
@@ -271,71 +350,7 @@ draw_seeYou_S:
     dw $88B7 : db $01, $02
     dw $2042, $2052
 
-warn pc, " - How close is this to $8CE1E9"
-
-;        A       L       L       A   _       P       R       O       S   S       I       M       A   _       M       I   S       S       I       O       N   E
-;    dw $0020, $002B, $002B, $0020, $007F, $002F, $0041, $002E, $0042, $0042, $0028, $002C, $0020, $007F, $002C, $0028, $0042, $0042, $0028, $002E, $002D, $0024
-;    dw $0030, $003B, $003B, $0030, $007F, $003F, $0051, $003E, $0052, $0052, $0038, $003C, $0030, $007F, $003C, $0038, $0052, $0052, $0038, $003E, $003D, $0034
-
+;warn pc, " - How close is this to $8CE1E9"
 
 org $8CE1E9
 ; Don't overwrite stuff after $8C:E1E9 (bunch palettes)
-
-;; See You Next Mission
-;    dw $0020, $002B, $002B, $0020, $007F, $002F, $0041, $002E, $0042, $0042, $0028, $002C, $0020, $007F, $002C, $0028, $0042, $0042, $0028, $002E, $002D, $0024
-;    dw $0030, $003B, $003B, $0030, $007F, $003F, $0051, $003E, $0052, $0052, $0038, $003C, $0030, $007F, $003C, $0038, $0052, $0052, $0038, $003E, $003D, $0034
-;;Results
-;    dw $1811, $1804, $1812, $1814, $180B, $1813, $1812
-;;Items
-;    dw $1828, $1843, $1824, $182C, $1842 
-;    dw $1838, $1853, $1834, $183C, $1852 
-;;Datalogs
-;    dw $1823, $1820, $1843, $1820, $182B, $182E, $1826, $1842 
-;    dw $1833, $1830, $1853, $1830, $183B, $183E, $1836, $1852 
-;;Secrets
-;    dw $1842, $1824, $1822, $1841, $1824, $1843, $1842
-;    dw $1852, $1834, $1832, $1851, $1834, $1853, $1852
-;; 100%
-;    $1461, $1460, $1460, $146A
-;    $1471, $1470, $1470, $147A
-;; 4/4
-;    dw $1464, $145B, $1464
-;    dw $1474, $146B, $1474
-;; 3/3
-;    dw $1463, $145B, $1463
-;    dw $1473, $146B, $1473
-
-
-
-;   dw $207F, $207F, $207F, $207F, $207F, $2020, $202B, $202B, $2020, $207F, $202F, $2041, $202E, $2042, $2042, $2028, $202C, $2020, $207F, $202C, $2028, $2042, $2042, $2028, $202E, $202D, $2024, $207F, $207F, $207F, $207F, $207F,
-;   dw $207F, $207F, $207F, $207F, $207F, $2030, $203B, $203B, $2030, $207F, $203F, $2051, $203E, $2052, $2052, $2038, $203C, $2030, $207F, $203C, $2038, $2052, $2052, $2038, $203E, $203D, $2034, $207F, $207F, $207F, $207F, $207F,
-;
-;   dw $207F, $207F, $207F, $207F, $207F, $207F, $207F, $3C11, $3C04, $3C12, $3C14, $3C0B, $3C13, $3C12, $207F, $207F, $207F, $207F, $207F, $207F, $207F, $207F, $207F, $207F, $207F, $207F, $207F, $207F, $207F, $207F, $207F, $207F,
-;
-;   dw $3C28, $3C43, $3C24, $3C2C, $3C42, $207F, $207F, $207F, $207F, $207F, $207F, $207F, $3861, $3860, $3860, $386A
-;   dw $3C38, $3C53, $3C34, $3C3C, $3C52, $207F, $207F, $207F, $207F, $207F, $207F, $207F, $3871, $3870, $3870, $387A
-;
-;   dw $3C23, $3C20, $3C43, $3C20, $3C2B, $3C2E, $3C26, $3C42, $3C7F, $207F, $207F, $207F, $207F, $3864, $385B, $3864
-;   dw $3C33, $3C30, $3C53, $3C30, $3C3B, $3C3E, $3C36, $3C52, $207F, $207F, $207F, $207F, $207F, $3874, $386B, $3874
-;
-;   dw $3C42, $3C24, $3C22, $3C41, $3C24, $3C43, $3C42, $207F, $207F, $207F, $207F, $207F, $207F, $3863, $385B, $3863
-;   dw $3C52, $3C34, $3C32, $3C51, $3C34, $3C53, $3C52, $207F, $207F, $207F, $207F, $207F, $207F, $3873, $386B, $3873
-;
-;; Items
-;dw $3C28, $3C43, $3C24, $3C2C, $3C42
-;dw $3C38, $3C53, $3C34, $3C3C, $3C52
-;; Datalogs
-;dw $3C23, $3C20, $3C43, $3C20, $3C2B, $3C2E, $3C26, $3C42
-;dw $3C33, $3C30, $3C53, $3C30, $3C3B, $3C3E, $3C36, $3C52
-;; Results
-;dw $3C42, $3C24, $3C22, $3C41, $3C24, $3C43, $3C42
-;dw $3C52, $3C34, $3C32, $3C51, $3C34, $3C53, $3C52
-;; Percent
-;dw $386A
-;dw $387A
-;; Datalog Total
-;dw $385B, $3864
-;dw $386B, $3874
-;; Secret Total
-;dw $385B, $3863
-;dw $386B, $3873
