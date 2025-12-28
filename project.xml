@@ -1715,6 +1715,7 @@
     <Space start="B6DD43" end="B6DD45" />
     <Space start="B6DD64" end="B6DD64" />
     <Space start="B6DD83" end="B6DD85" />
+    <Space start="B6E000" end="B6E7FF" />
     <Space start="C2C2D3" end="C2D6E6" />
     <Space start="E08000" end="FFFFFF" />
   </ASMUsedSpaceBankAny>

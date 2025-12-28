@@ -173,3 +173,7 @@ incsrc "./equip-screen/unicolor-no-boots.asm"
 incsrc "./equip-screen/unicolor-boots.asm"
 incsrc "./equip-screen/tricolor-no-boots.asm"
 incsrc "./equip-screen/tricolor-boots.asm"
+
+
+org $B6E000 ; Map tilemap
+incbin "./map-screen/pauseMapScreen.map"
