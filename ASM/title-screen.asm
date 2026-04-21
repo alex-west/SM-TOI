@@ -1,28 +1,27 @@
-
-
+; Title Screen edits
 lorom
 
 org $8B9EC8 ;: rts
     JSL $8DC4E9 ;-- get rid of fade in effect for title
 
 org $8C879D ; Tour of Italy spritemap
-    ;incbin "./title-spritemap.bin"
     DW $000F
-    DB $6E,$80,$F0,$4A,$34
-    DB $5E,$80,$F0,$48,$34
-    DB $4E,$80,$F0,$46,$34
-    DB $3E,$80,$F0,$44,$34
-    DB $2E,$80,$F0,$42,$34
-    DB $1E,$80,$F0,$40,$34
-    DB $0D,$80,$F0,$24,$34
-    DB $FD,$81,$F0,$22,$34
-    DB $ED,$81,$F0,$20,$34
+    DB $6D,$80,$F0,$4A,$34
+    DB $5D,$80,$F0,$48,$34
+    DB $4D,$80,$F0,$46,$34
+    DB $3D,$80,$F0,$44,$34
+    DB $2D,$80,$F0,$42,$34
+    DB $1D,$80,$F0,$40,$34
+    DB $0B,$80,$F0,$24,$34
+    DB $FB,$81,$F0,$22,$34
+    DB $EB,$81,$F0,$20,$34
     DB $DB,$81,$F0,$0A,$34
     DB $CB,$81,$F0,$08,$34
     DB $BB,$81,$F0,$06,$34
-    DB $AC,$81,$F0,$04,$34
-    DB $9C,$81,$F0,$02,$34
-    DB $8C,$81,$F0,$00,$34
+    DB $AB,$81,$F0,$04,$34
+    DB $9B,$81,$F0,$02,$34
+    DB $8B,$81,$F0,$00,$34
+
 
 org $8CE1E9 ;;; $E1E9: Palettes - title screen ;;;
     dw $0000,$02DF,$01D7,$00AC,$5EBB,$3DB3,$292E,$1486,$48FB,$48FB,$7FFF,$0000,$7FFF,$44E5,$7FFF,$0000
