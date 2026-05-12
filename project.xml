@@ -456,6 +456,7 @@
     <Space start="80FFDC" end="80FFDF" />
     <Space start="818000" end="818002" />
     <Space start="818085" end="818087" />
+    <Space start="81882B" end="81882D" />
     <Space start="8192DC" end="819305" />
     <Space start="819A47" end="819A4A" />
     <Space start="819A52" end="819A55" />
@@ -536,8 +537,16 @@
     <Space start="8B8697" end="8B8697" />
     <Space start="8B86E0" end="8B86E1" />
     <Space start="8B877A" end="8B877F" />
+    <Space start="8B9CC8" end="8B9CCA" />
+    <Space start="8B9D56" end="8B9D58" />
+    <Space start="8B9DCF" end="8B9DD1" />
+    <Space start="8B9E51" end="8B9E53" />
     <Space start="8B9EC8" end="8B9ECB" />
     <Space start="8B9F29" end="8B9F2B" />
+    <Space start="8BA03D" end="8BA050" />
+    <Space start="8BA055" end="8BA064" />
+    <Space start="8BA079" end="8BA088" />
+    <Space start="8BA09D" end="8BA0AC" />
     <Space start="8BA3B3" end="8BA3B8" />
     <Space start="8BA592" end="8BA597" />
     <Space start="8BA613" end="8BA62A" />
@@ -554,6 +563,7 @@
     <Space start="8BF760" end="8BF798" />
     <Space start="8C80BB" end="8C8102" />
     <Space start="8C879D" end="8C87E9" />
+    <Space start="8C8862" end="8C8A31" />
     <Space start="8CDF5B" end="8CE106" />
     <Space start="8CE1E9" end="8CE3E8" />
     <Space start="8CE56B" end="8CE588" />
@@ -687,7 +697,7 @@
     <Space start="94B19F" end="94B1AF" />
     <Space start="94DCF0" end="94DCF6" />
     <Space start="94E00B" end="94F600" />
-    <Space start="9580D8" end="959353" />
+    <Space start="9580D8" end="958F8A" />
     <Space start="96FC04" end="96FD14" />
     <Space start="9A9A0A" end="9A9A0F" />
     <Space start="9A9A1A" end="9A9A85" />

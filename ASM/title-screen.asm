@@ -1,9 +1,70 @@
 ; Title Screen edits
 lorom
 
+; !!!!!!!!!!!!!!!!! UGLY HACK !!!!!!!!!!!!!!!!!
+; Sure. Just fundamentally modify a sprite drawing routine, will ya?
+org $81882B
+    nop : nop : nop ;AND #$F1FF
+    ; eor $16 ; ORA $16 ; This change would have some big ramifications
+
+; === Bank 8B ===
+; Code and instruction lists
+
+; Palette indeces
+org $8B9CC8 : LDA #$0000 ;#$0200
+org $8B9D56 : LDA #$0000 ;#$0200
+org $8B9DCF : LDA #$0000 ;#$0200
+org $8B9E51 : LDA #$0000 ;#$0200
+
 org $8B9EC8 ;: rts
     JSL $8DC4E9 ;-- get rid of fade in effect for title
 
+;;; $A03D: Instruction list - cinematic sprite object $A0EF ('1994' scrolling text) ;;;
+{
+org $8BA03D ; 2024-2026
+    dw $001C,$0000 ; Wait?
+    dw $0020,spr_2024
+    dw $0020,spr_2024dash
+    dw $0025,spr_2024dash2026
+    dw $9CE1        ; Trigger title sequence scene 0
+    dw $9438        ; Delete
+} ; OG Timing: $3C,8,8,8,$2D
+
+
+;;; $A055: Instruction list - cinematic sprite object $A0F5 ('NINTENDO' scrolling text) ;;;
+{
+org $8BA055 ; PRESENTING
+    dw $0020,spr_pre
+    dw $0020,spr_present
+    dw $0025,spr_presenting
+    dw $9D5D        ; Trigger title sequence scene 1
+    dw $9438        ; Delete
+} ; OG Timing 8,8,8,8,8,8,8,$2D = $65
+
+
+;;; $A079: Instruction list - cinematic sprite object $A0FB ('PRESENTS' scrolling text) ;;;
+{
+org $8BA079 ; PROJECT ITALY
+    dw $0020,spr_proj
+    dw $0020,spr_projecti
+    dw $0025,spr_projectitaly
+    dw $9DD6        ; Trigger title sequence scene 2
+    dw $9438        ; Delete
+} ; OG Timing 8,8,8,8,8,8,8,$2D = $65
+
+
+;;; $A09D: Instruction list - cinematic sprite object $A101 ('METROID 3' scrolling text) ;;;
+{
+org $8BA09D ; METROID 4.5
+    dw $0020,spr_met
+    dw $0020,spr_metroid
+    dw $00A8,spr_metroid4point5
+    dw $9E58        ; Trigger title sequence scene 3
+    dw $9438        ; Delete
+} ; OG Timing 8,8,8,8,8,8,8,8,$78 = $B8
+
+; === BANK 8C ===
+; Spritemaps
 
 org $8C80BB ; Boot logo spritemap
     DW $000E
@@ -41,6 +102,125 @@ org $8C879D ; Tour of Italy spritemap
     DB $9B,$81,$F0,$02,$34
     DB $8B,$81,$F0,$00,$34
 
+org $8C8862 ; Pre-title text spritemaps
+
+spr_2024dash2026:
+  DW $0009
+  DW $8031 : DB $F8 : DW $0708
+  DW $8024 : DB $F8 : DW $0702
+  DW $8019 : DB $F8 : DW $0700
+  DW $800C : DB $F8 : DW $0702
+  DW $01FC : DB $FC : DW $030A
+  DW $81E8 : DB $F8 : DW $0504
+  DW $81DB : DB $F8 : DW $0502
+  DW $81D0 : DB $F8 : DW $0500
+  DW $81C3 : DB $F8 : DW $0502
+spr_2024dash:
+  DW $0005
+  DW $01FC : DB $FC : DW $030A
+  DW $81E8 : DB $F8 : DW $0504
+  DW $81DB : DB $F8 : DW $0502
+  DW $81D0 : DB $F8 : DW $0500
+  DW $81C3 : DB $F8 : DW $0502
+spr_2024:
+  DW $0004
+  DW $81E8 : DB $F8 : DW $0504
+  DW $81DB : DB $F8 : DW $0502
+  DW $81D0 : DB $F8 : DW $0500
+  DW $81C3 : DB $F8 : DW $0502
+
+spr_presenting:
+  DW $000A
+  DW $8037 : DB $F8 : DW $0728
+  DW $8027 : DB $F8 : DW $0744
+  DW $801F : DB $F8 : DW $072A
+  DW $8011 : DB $F8 : DW $034E
+  DW $8000 : DB $F8 : DW $0344
+  DW $81F2 : DB $F8 : DW $0326
+  DW $81E6 : DB $F8 : DW $034C
+  DW $81D8 : DB $F8 : DW $0526
+  DW $81C8 : DB $F8 : DW $054A
+  DW $81BA : DB $F8 : DW $0548
+spr_present:
+  DW $0007
+  DW $8011 : DB $F8 : DW $034E
+  DW $8000 : DB $F8 : DW $0344
+  DW $81F2 : DB $F8 : DW $0326
+  DW $81E6 : DB $F8 : DW $034C
+  DW $81D8 : DB $F8 : DW $0526
+  DW $81C8 : DB $F8 : DW $054A
+  DW $81BA : DB $F8 : DW $0548
+spr_pre:
+  DW $0003
+  DW $81D8 : DB $F8 : DW $0526
+  DW $81C8 : DB $F8 : DW $054A
+  DW $81BA : DB $F8 : DW $0548
+
+spr_projectitaly:
+  DW $000D
+  DW $8045 : DB $F8 : DW $070E
+  DW $803A : DB $F8 : DW $072E
+  DW $8028 : DB $F8 : DW $0720
+  DW $801C : DB $F8 : DW $074E
+  DW $8014 : DB $F8 : DW $032A
+  DW $8000 : DB $F8 : DW $034E
+  DW $81F0 : DB $F8 : DW $0322
+  DW $81E2 : DB $F8 : DW $0326
+  DW $01D9 : DB $06 : DW $053C
+  DW $81D9 : DB $F6 : DW $051C
+  DW $81C8 : DB $F8 : DW $0546
+  DW $81B8 : DB $F8 : DW $054A
+  DW $81AA : DB $F8 : DW $0548
+spr_projecti:
+  DW $0009
+  DW $8014 : DB $F8 : DW $032A
+  DW $8000 : DB $F8 : DW $034E
+  DW $81F0 : DB $F8 : DW $0322
+  DW $81E2 : DB $F8 : DW $0326
+  DW $01D9 : DB $06 : DW $053C
+  DW $81D9 : DB $F6 : DW $051C
+  DW $81C8 : DB $F8 : DW $0546
+  DW $81B8 : DB $F8 : DW $054A
+  DW $81AA : DB $F8 : DW $0548
+spr_proj:
+  DW $0005
+  DW $01D9 : DB $06 : DW $053C
+  DW $81D9 : DB $F6 : DW $051C
+  DW $81C8 : DB $F8 : DW $0546
+  DW $81B8 : DB $F8 : DW $054A
+  DW $81AA : DB $F8 : DW $0548
+
+spr_metroid4point5:
+  DW $000B
+  DW $803D : DB $F8 : DW $0706
+  DW $0039 : DB $00 : DW $071A
+  DW $802B : DB $F8 : DW $0704
+  DW $8014 : DB $F8 : DW $0324
+  DW $800C : DB $F8 : DW $032A
+  DW $81FB : DB $F8 : DW $0346
+  DW $81EB : DB $F8 : DW $034A
+  DW $81DD : DB $F8 : DW $054E
+  DW $81CF : DB $F8 : DW $0526
+  DW $81C1 : DB $F8 : DW $0541
+  DW $81B9 : DB $F8 : DW $0540
+spr_metroid:
+  DW $0008
+  DW $8014 : DB $F8 : DW $0324
+  DW $800C : DB $F8 : DW $032A
+  DW $81FB : DB $F8 : DW $0346
+  DW $81EB : DB $F8 : DW $034A
+  DW $81DD : DB $F8 : DW $054E
+  DW $81CF : DB $F8 : DW $0526
+  DW $81C1 : DB $F8 : DW $0541
+  DW $81B9 : DB $F8 : DW $0540
+spr_met:
+  DW $0004
+  DW $81DD : DB $F8 : DW $054E
+  DW $81CF : DB $F8 : DW $0526
+  DW $81C1 : DB $F8 : DW $0541
+  DW $81B9 : DB $F8 : DW $0540
+
+warnpc $8C8C00
 
 org $8CE1E9 ;;; $E1E9: Palettes - title screen ;;;
     dw $0000,$02DF,$01D7,$00AC,$5EBB,$3DB3,$292E,$1486,$48FB,$48FB,$7FFF,$0000,$7FFF,$44E5,$7FFF,$0000
@@ -57,7 +237,8 @@ org $8CE1E9 ;;; $E1E9: Palettes - title screen ;;;
     dw $1000,$7FFF,$13FF,$131D,$121F,$093F,$00BF,$0017,$0C8C,$001F,$2000,$6F5A,$5AB5,$4A10,$354A,$1000
     dw $1000,$2220,$77BD,$18B9, $1140,$39CE,$0C4C, $0CC0,$14A5,$1007, $7E20, $2220,$77BD,$18B9, $354A,$1000
     ;dw $1000,$7FFF,$13FF,$0F5F,$0EBF,$0A1F,$055F,$04BF,$001F,$0018,$1032,$204C,$3066,$5AB5,$354A,$1000
-    dw $1000,$6BF5,$2E41,$2DA1,$2D01,$5E5F,$183F,$1014,$080A,$0404,$4F9F,$3ED8,$2E12,$6F70,$7FFF,$5EE0
+    dw $1000,$189B,$2E41,$2DA1,$2D01,$5E5F,$183F,$1014,$080A,$0404,$4F9F,$3ED8,$2E12,$6F70,$7FFF,$5EE0
+    ;dw $1000,$6BF5,$2E41,$2DA1,$2D01,$5E5F,$183F,$1014,$080A,$0404,$4F9F,$3ED8,$2E12,$6F70,$7FFF,$5EE0
     dw $1000,$7C00,$5800,$3400,$1000,$6C00,$4800,$2400,$0000,$0000,$0000,$0000,$0000,$0000,$0000,$0000
     dw $1000,$3570,$24CB,$0402,$0401,$312E,$1889,$1026,$0C04,$43FF,$0118,$0014,$16FF,$023E,$017B,$5EE0
     dw $1000,$72F2,$6A4D,$4524,$1400,$5E5F,$2C3F,$2414,$1C0A,$6B5E,$4E78,$2991,$0299,$0174,$000F,$0040
