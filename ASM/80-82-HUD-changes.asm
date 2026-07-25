@@ -30,7 +30,7 @@ org $80988B ; Initial tilemap
 HUD_initialTilemap:
    dw $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $AC7B, $AC7C, $AC7C, $AC7C, $AC7C, $AC7C, $EC7B
 ; Other rows   
-   dw $2C0F, $2C0B, $2C0C, $2C0D, $2C32, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C7E, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $6C7E
+   dw $2C0F, $2C0A, $2C0B, $2C0C, $2C0D, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C7E, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $6C7E
    dw $2C7C, $2C7C, $2C7A, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $2C7E, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $6C7E
    dw $2C0F, $2C0F, $2C7B, $2C7C, $2C7C, $2C7C, $2C7C, $2C7C, $2C7C, $2C7C, $2C7C, $2C7C, $2C7C, $2C7C, $2C7C, $2C7C, $2C7C, $2C7C, $2C7C, $2C7C, $2C7C, $2C7C, $2C7C, $2C7C, $2C7C, $2C7D, $2C0F, $2C0F, $2C0F, $2C0F, $2C0F, $6C7E
 
@@ -49,18 +49,18 @@ HUD_reserveEmpty:
     
 ; Missiles (13,0)
 HUD_missiles:
-    dw $3449, $344B
-    dw $344A, $344C
+    dw $3459, $345B
+    dw $345A, $345C
 
 ; Super missiles (18,0)
 HUD_superMissiles:
-    dw $3434, $7434
-    dw $3435, $7435
+    dw $34CD, $74CD
+    dw $34DD, $74DD
 
 ; Power bombs (22,0)
 HUD_powerBombs:
-    dw $3436, $7436
-    dw $3437, $7437
+    dw $34CE, $74CE
+    dw $34DE, $74DE
 
 ; Grapple (0,2)
 HUD_grapple:
@@ -74,8 +74,8 @@ HUD_xRay:
     
 ; E-Tank full (5,0) to (11,1)
 HUD_energyTankFull:
-    dw $3030
-    dw $3031
+    dw $30CF
+    dw $30DF
     
 ; E-Tank empty
 HUD_energyTankEmpty:
@@ -398,7 +398,7 @@ org $809DBF
 HUD_curDigits:
     dw $2C09, $2C00, $2C01, $2C02, $2C03, $2C04, $2C05, $2C06, $2C07, $2C08
 HUD_maxDigits:
-    dw $3445, $343C, $343D, $343E, $343F, $3440, $3441, $3442, $3443, $3444
+    dw $34D9, $34D0, $34D1, $34D2, $34D3, $34D4, $34D5, $34D6, $34D7, $34D8
     
     
 org $80CD8E ; FREESPACE
