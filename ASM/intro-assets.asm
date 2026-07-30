@@ -1,5 +1,8 @@
 lorom
 
+org $8BAD5B : LDA.w #236   ; Spawn baby metroid being delivered offscreen (y pos)
+org $8BAD93 : LDA.w #$0170 ; Spawn baby metroid being examined offscreen (x pos)
+
 org $8CE3E9 ; Intro palette
     dw $0000,$03E0,$6318,$0340,$3BE0,$03E0,$6318,$0280,$2680,$03E0,$6318,$0200,$1580,$03E0,$6318,$0160
     dw $0000,$7FFF,$0000,$294A,$7FFF,$6318,$294A,$6318,$6318,$6318,$6318,$6318,$6318,$6318,$0000,$6318
