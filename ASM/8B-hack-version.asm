@@ -18,6 +18,6 @@ org $8B877A ; 'Ver.' OAM entry tile numbers and attributes
 ;}
 org $8BF754
     db $30, $2E
-    db $39, $32, $00;$2E
+    db $39, $33, $00;$2E
     ;db $32, $31, $2E
     ;db $33, $30, $00
