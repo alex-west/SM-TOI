@@ -33,37 +33,37 @@ org $85FF80 ; Freespace
 
 timerTable:
     dw 0   ; $00 - none
-    dw 360 ; $01 - energy tank
-    dw 360 ; $02 - missile tank
-    dw 360 ; $03 - super missile
-    dw 360 ; $04 - power bomb
-    dw 360 ; $05 - grapple
-    dw 360 ; $06 - xray
-    dw 360 ; $07 - varia suit
-    dw 360 ; $08 - spring ball
-    dw 360 ; $09 - morph ball
-    dw 360 ; $0A - screw attack
-    dw 360 ; $0B - high jump boots
-    dw 360 ; $0C - space jump
-    dw 360 ; $0D - speed booster
-    dw 360 ; $0E - charge beam
-    dw 360 ; $0F - ice beam
-    dw 360 ; $10 - wave beam
-    dw 360 ; $11 - spazer
-    dw 360 ; $12 - plasma beam
-    dw 360 ; $13 - bomb
-    dw 10  ; $14 - map station
-    dw 10  ; $15 - energy refill
-    dw 10  ; $16 - missile refill
-    dw 10  ; $17 - save 
-    dw 10  ; $18 - save complete
-    dw 360 ; $19 - reserve tank 
-    dw 360 ; $1A - gravity suit
+    dw 60 ; $01 - energy tank
+    dw 60 ; $02 - missile tank
+    dw 60 ; $03 - super missile
+    dw 60 ; $04 - power bomb
+    dw 120 ; $05 - grapple
+    dw 120 ; $06 - xray
+    dw 120 ; $07 - varia suit
+    dw 120 ; $08 - spring ball
+    dw 120 ; $09 - morph ball
+    dw 120 ; $0A - screw attack
+    dw 120 ; $0B - high jump boots
+    dw 120 ; $0C - space jump
+    dw 120 ; $0D - speed booster
+    dw 120 ; $0E - charge beam
+    dw 120 ; $0F - ice beam
+    dw 120 ; $10 - wave beam
+    dw 120 ; $11 - spazer
+    dw 120 ; $12 - plasma beam
+    dw 120 ; $13 - bomb
+    dw 80  ; $14 - map station
+    dw 40  ; $15 - energy refill
+    dw 40  ; $16 - missile refill
+    dw 40  ; $17 - save 
+    dw 40  ; $18 - save complete
+    dw 120 ; $19 - reserve tank 
+    dw 120 ; $1A - gravity suit
     dw 10  ; $1B - 111111111111
-    dw 10  ; $1C - save 
-    dw 10  ; $1D - gates remaining
-    dw 10  ; $1E - station opened
+    dw 40  ; $1C - save 
+    dw 80  ; $1D - gates remaining
+    dw 80  ; $1E - station opened
     dw 360 ; $1F - key item
-    dw 10  ; $20 - invalid key 
-    dw 10  ; $21 - self-destruct
+    dw 40  ; $20 - invalid key 
+    dw 40  ; $21 - self-destruct
     dw 10   ; $22 - 
