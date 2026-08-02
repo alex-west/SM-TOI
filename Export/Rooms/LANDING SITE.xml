@@ -2,7 +2,7 @@
   <Saves>
     <SaveRoom>
       <saveindex>12</saveindex>
-      <indoor roomarea="00" roomindex="00" doorindex="04" />
+      <indoor roomarea="00" roomindex="00" doorindex="00" />
       <unused>0000</unused>
       <unused>0000</unused>
       <screenx>0400</screenx>
@@ -21,50 +21,6 @@
   <dnscroll>A0</dnscroll>
   <specialGFX>00</specialGFX>
   <Doors>
-    <Door>
-      <toroom area="00" index="02" />
-      <bitflag>00</bitflag>
-      <direction>05</direction>
-      <tilex>E</tilex>
-      <tiley>6</tiley>
-      <screenx>04</screenx>
-      <screeny>00</screeny>
-      <distance>8000</distance>
-      <doorcode>0000</doorcode>
-    </Door>
-    <Door>
-      <toroom area="00" index="0D" />
-      <bitflag>00</bitflag>
-      <direction>00</direction>
-      <tilex>0</tilex>
-      <tiley>0</tiley>
-      <screenx>00</screenx>
-      <screeny>00</screeny>
-      <distance>8000</distance>
-      <doorcode>0000</doorcode>
-    </Door>
-    <Door>
-      <toroom area="00" index="01" />
-      <bitflag>00</bitflag>
-      <direction>05</direction>
-      <tilex>E</tilex>
-      <tiley>6</tiley>
-      <screenx>04</screenx>
-      <screeny>00</screeny>
-      <distance>8000</distance>
-      <doorcode>0000</doorcode>
-    </Door>
-    <Door>
-      <toroom area="00" index="03" />
-      <bitflag>00</bitflag>
-      <direction>04</direction>
-      <tilex>1</tilex>
-      <tiley>6</tiley>
-      <screenx>00</screenx>
-      <screeny>00</screeny>
-      <distance>8000</distance>
-      <doorcode>0000</doorcode>
-    </Door>
     <Door>
       <toroom area="00" index="00" />
       <bitflag>00</bitflag>
