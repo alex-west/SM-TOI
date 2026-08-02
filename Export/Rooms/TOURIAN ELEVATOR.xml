@@ -32,22 +32,6 @@
       <distance>8000</distance>
       <doorcode>0000</doorcode>
     </Door>
-    <Door>
-      <toroom area="00" index="33" />
-      <bitflag>D0</bitflag>
-      <direction>03</direction>
-      <tilex>0</tilex>
-      <tiley>0</tiley>
-      <screenx>00</screenx>
-      <screeny>01</screeny>
-      <distance>0000</distance>
-      <doorcode>
-        <ScrollData>
-          <Change screen="00" scroll="02" />
-          <Change screen="01" scroll="02" />
-        </ScrollData>
-      </doorcode>
-    </Door>
     <Elevator />
     <Door>
       <toroom area="05" index="12" />

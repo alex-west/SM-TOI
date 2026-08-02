@@ -39,33 +39,6 @@
       </doorcode>
     </Door>
     <Elevator />
-    <Door>
-      <toroom area="00" index="07" />
-      <bitflag>00</bitflag>
-      <direction>07</direction>
-      <tilex>6</tilex>
-      <tiley>D</tiley>
-      <screenx>01</screenx>
-      <screeny>02</screeny>
-      <distance>01C0</distance>
-      <doorcode>
-        <ScrollData>
-          <Change screen="01" scroll="02" />
-          <Change screen="04" scroll="02" />
-        </ScrollData>
-      </doorcode>
-    </Door>
-    <Door>
-      <toroom area="00" index="0F" />
-      <bitflag>00</bitflag>
-      <direction>00</direction>
-      <tilex>0</tilex>
-      <tiley>0</tiley>
-      <screenx>00</screenx>
-      <screeny>00</screeny>
-      <distance>8000</distance>
-      <doorcode>0000</doorcode>
-    </Door>
   </Doors>
   <States>
     <State condition="default">
