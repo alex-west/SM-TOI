@@ -9,64 +9,7 @@
   <upscroll>90</upscroll>
   <dnscroll>A0</dnscroll>
   <specialGFX>00</specialGFX>
-  <Doors>
-    <Door>
-      <toroom area="03" index="01" />
-      <bitflag>50</bitflag>
-      <direction>04</direction>
-      <tilex>1</tilex>
-      <tiley>6</tiley>
-      <screenx>00</screenx>
-      <screeny>00</screeny>
-      <distance>8000</distance>
-      <doorcode>
-        <Code OP="A0" ARG="8275" />
-        <Code OP="22" ARG="878027" />
-        <Code OP="22" ARG="8483D7" StackRelative="09 4B B6 60" />
-        <Code OP="60" />
-      </doorcode>
-    </Door>
-    <Door>
-      <toroom area="03" index="02" />
-      <bitflag>40</bitflag>
-      <direction>04</direction>
-      <tilex>1</tilex>
-      <tiley>6</tiley>
-      <screenx>00</screenx>
-      <screeny>00</screeny>
-      <distance>8000</distance>
-      <doorcode>0000</doorcode>
-    </Door>
-    <Door>
-      <toroom area="03" index="00" />
-      <bitflag>40</bitflag>
-      <direction>04</direction>
-      <tilex>1</tilex>
-      <tiley>6</tiley>
-      <screenx>02</screenx>
-      <screeny>00</screeny>
-      <distance>8000</distance>
-      <doorcode>
-        <ScrollData>
-          <Change screen="08" scroll="00" />
-          <Change screen="09" scroll="00" />
-          <Change screen="0A" scroll="00" />
-          <Change screen="0B" scroll="00" />
-        </ScrollData>
-      </doorcode>
-    </Door>
-    <Door>
-      <toroom area="03" index="0E" />
-      <bitflag>40</bitflag>
-      <direction>04</direction>
-      <tilex>1</tilex>
-      <tiley>6</tiley>
-      <screenx>00</screenx>
-      <screeny>00</screeny>
-      <distance>8000</distance>
-      <doorcode>0000</doorcode>
-    </Door>
-  </Doors>
+  <Doors />
   <States>
     <State condition="default">
       <LevelData Width="8" Height="6">
