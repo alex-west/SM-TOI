@@ -9,24 +9,7 @@
   <upscroll>70</upscroll>
   <dnscroll>A0</dnscroll>
   <specialGFX>00</specialGFX>
-  <Doors>
-    <Door>
-      <toroom area="04" index="03" />
-      <bitflag>00</bitflag>
-      <direction>04</direction>
-      <tilex>1</tilex>
-      <tiley>6</tiley>
-      <screenx>00</screenx>
-      <screeny>01</screeny>
-      <distance>8000</distance>
-      <doorcode>
-        <ScrollData>
-          <Change screen="00" scroll="00" />
-          <Change screen="04" scroll="01" />
-        </ScrollData>
-      </doorcode>
-    </Door>
-  </Doors>
+  <Doors />
   <States>
     <State condition="E612">
       <Arg>0B</Arg>
