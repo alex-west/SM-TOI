@@ -75,17 +75,6 @@
       <distance>8000</distance>
       <doorcode>0000</doorcode>
     </Door>
-    <Door>
-      <toroom area="01" index="34" />
-      <bitflag>D0</bitflag>
-      <direction>03</direction>
-      <tilex>0</tilex>
-      <tiley>0</tiley>
-      <screenx>00</screenx>
-      <screeny>00</screeny>
-      <distance>0000</distance>
-      <doorcode>0000</doorcode>
-    </Door>
     <Elevator />
     <Door>
       <toroom area="02" index="32" />
